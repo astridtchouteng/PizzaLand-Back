@@ -26,6 +26,7 @@ public class PizzaLandBackApplication {
 	
 	
 	public static void main(String[] args) {
+		System.out.println("=================  hello =================");
 		SpringApplication.run(PizzaLandBackApplication.class, args);
 	
 	}
