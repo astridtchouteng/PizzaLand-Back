@@ -24,12 +24,15 @@ public class Categorie {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	/**
+	 * LAZY :  lorsque je charge la categorie je peux ne pas charger le produit
+	 */
 	@OneToMany(cascade = CascadeType.ALL,
-				fetch = FetchType.EAGER,
+				fetch = FetchType.LAZY,
 				mappedBy = "categorie")
 	private Set<Produit> produits;
 	
-	@Column(name = "TITRE")
+	@Column(name = "TITRE", unique= true)
 	@NonNull
 	@Size(min=5,max=50)
 	private String titre;

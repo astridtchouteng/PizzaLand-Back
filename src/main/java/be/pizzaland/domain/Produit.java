@@ -44,7 +44,10 @@ public class Produit {
 	
 	
 	@JsonIgnore
-	@ManyToOne(fetch = FetchType.LAZY/*, cascade = CascadeType.PERSIST*/)
+	/*
+	 * EAGER : lorsque je charge un produit je charge la categorie
+	 */
+	@ManyToOne(fetch = FetchType.EAGER/*, cascade = CascadeType.PERSIST*/)
 	@JoinColumn(name="CATEGORIE_ID", nullable = false)
 	private Categorie categorie;
 	

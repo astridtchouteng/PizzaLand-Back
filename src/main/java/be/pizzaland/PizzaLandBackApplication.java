@@ -31,6 +31,17 @@ public class PizzaLandBackApplication {
 	}
 	
 	
+	@Bean
+	CommandLineRunner run() {
+		return args ->{
+			System.out.println(" ============= LISTE des PRODUITS DE LA CATEGORIE Boisson");
+		
+			repoCategories.findProduitsByTitre("Boisson").forEach(System.out::println);
+		
+		
+		};
+	}
+	
 //	@Bean
 //	CommandLineRunner run() {
 //		return args ->{
@@ -68,11 +79,44 @@ public class PizzaLandBackApplication {
 //			repoProduits.save(p2);
 //			repoProduits.save(p3);
 //			
+//			Categorie c = new Categorie();
+//			c.setTitre("Boisson");
+//			c.setProduits(new HashSet<Produit>());
+//			
+//			Produit p = new Produit();
+//			p.setNom("Coca");
+//			p.setDescription("Made in Belgium");
+//			p.setPrix(new BigDecimal(8.5));
+//			p.setCategorie(c);
+//			
+//			Produit p2 = new Produit();
+//			p2.setNom("Fanta");
+//			p2.setDescription("Couleur Orange");
+//			p2.setPrix(new BigDecimal(10.5));
+//			p2.setCategorie(c);
+//			
+//			Produit p3 = new Produit();
+//			p3.setNom("Sprite");
+//			p3.setDescription("Au gout Whaouuu");
+//			p3.setPrix(new BigDecimal(6.5));
+//			p3.setCategorie(c);
+//			
+//			
+//			c.getProduits().add(p3);
+//			c.getProduits().add(p2);
+//			c.getProduits().add(p);
+//			
+//			repoCategories.save(c);
+//			
+//			repoProduits.save(p);
+//			repoProduits.save(p2);
+//			repoProduits.save(p3);
+//			
 //			
 //			
 //			
 //		};
 //	}
-	
+//	
 	
 }
